@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shaemus Dobkos Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Blob element -->
+  <div class="hover-blob" id="hoverBlob"></div>
+
+  <div class="w3-top">
+    <div class="w3-bar" id="myNavbar">
+      <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);"
+        onclick="toggleFunction()" title="Toggle Navigation Menu">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="#home" class="w3-bar-item w3-button btnx" data-color="rgba(255, 99, 71, 0.7)"><span
+          class="w-fix">HOME</span></a>
+      <a href="#about" class="w3-bar-item w3-button w3-hide-small btnx" data-color="rgba(50, 205, 50, 0.7)"><i
+          class="fa fa-user"></i> ABOUT</a>
+      <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small btnx" data-color="rgba(0, 123, 255, 0.7)"><i
+          class="fa fa-th"></i> PORTFOLIO</a>
+      <a href="#skills" class="w3-bar-item w3-button w3-hide-small btnx" data-color="rgba(0, 023, 255, 0.7)"><i
+          class="fa fa-th"></i> SKILLS</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-hide-small btnx" data-color="rgba(60, 179, 113, 0.7)"><i
+          class="fa fa-envelope"></i> CONTACT</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red btnx"
+        data-color="rgba(238, 130, 238, 0.7)">
+        <i class="fa fa-search btnx"></i>
+        <a href="javascript:void(0);" onclick="toggleDarkMode()"
+          class="w3-button w3-right w3-bar-item btnx">Light/Dark</a>
+
+      </a>
+    </div>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium nav_demo">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#skills" class="w3-bar-item w3-button" onclick="toggleFunction()">SKILLS</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+  </div>
+
+  <!-- First Parallax Image with Logo Text -->
+  <div class="" id="home">
+    <div class="video-container">
+      <video autoplay muted loop id="myVideo">
+        <source src="media/video/bg_orb_1080.mp4" type="video/mp4">
+        <img src="media/video/bg_orb_1080.mp4" alt="Fallback Image">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <div class="w3-display-middle" style="white-space:nowrap;">
+      <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">SHAM<span
+          class="w3-hide-small">-</span>SITE</span>
+    </div>
+  </div>
+
+  <!-- Container (About Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="about">
+    <h3 class="w3-center">ABOUT ME</h3>
+    <p class="w3-center">Hey, I'm Shae Dobko(Sham)</p>
+    <div class="a_text">
+      <p><b>Me In Tech & Front-End Development</b></p>
+      <p>I am an aspiring front-end developer and interactive designer
+
+        with a strong passion for emerging technologies like AI, VR, and AR.
+        I thrive on exploring new tech and blending creativity with code,
+        whether through web development, digital marketing, or AI-driven design.
+        With a keen interest in social and digital media, I enjoy building engaging
+        and immersive experiences that push the boundaries of interactivity.</p>
+
+      <p><b>Education & Hands-On Experience</b></p>
+      <p>Currently completing my Interactive Design and Technology program at Saskatchewan
+        Polytechnic, I have worked on a variety of projects, including websites, portfolios,
+        3D models, VR environments, and an AR experience. My studies have provided me with a
+        solid foundation in front-end development, UX/UI, and digital marketing, along with
+        hands-on experience in cutting-edge tools and frameworks.</p>
+
+      <p><b>Skills & Strengths</b></p>
+      <p>My strongest skills include HTML, CSS, JavaScript, React, Photoshop, Social Media Marketing,
+        and Digital Marketing, along with experience in VR/AR development (Meta Quest) and AI applications.
+        I enjoy front-end development the most, but I also have a deep appreciation for AI and its
+        impact on design and user experience. My portfolio showcases the projects I’ve created during
+        my time in school, demonstrating my ability to craft visually compelling and technically sound
+        digital experiences.</p>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col m6 w3-center w3-padding-large">
+        <p><b><i class="fa fa-user w3-margin-right"></i>Shae Alexander Dobko</b></p><br>
+        <img src="/media/image/Image20240826155412.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off"
+          alt="Photo of Me" width="500" height="333">
+      </div>
+
+      <!-- Hide this text on small devices -->
+      <div class="w3-col m6 w3-hide-small w3-padding-large">
+        <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure
+          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
+          elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+  
+  </div>
+
+  <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">14+</span><br>
+      Partners
+    </div>
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">55+</span><br>
+      Projects Done
+    </div>
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">89+</span><br>
+      Happy Clients
+    </div>
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">150+</span><br>
+      Meetings
+    </div>
+  </div>
+
+  <!-- Second Parallax Image with Portfolio Text -->
+  <div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+    </div>
+  </div>
+
+  <!-- Container (Portfolio Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="portfolio">
+    <h3 class="w3-center">MY WORK</h3>
+    <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make them
+        bigger</em></p><br>
+
+    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col m3">
+        <img src="media/image/framing.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="The mist over the mountains">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="media/image/symmetry.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="Coffee beans">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="media/image/sharpbback.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="Bear closeup">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="media/image/thirds.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="Quiet ocean">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img src="media/image/bro_bru.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="The mist">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="media/image/franky.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="My beloved typewriter">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="media/image/bru.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="Empty ghost train">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="media/image/me_re.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+          alt="Sailing">
+      </div>
+      <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i
+        class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+  </div>
+
+  <!-- Third Parallax Image with Portfolio Text -->
+  <div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+    </div>
+  </div>
+
+  <!-- SKILLS ADDED-->
+  <div class="w3-content w3-container w3-padding-64" id="skills">
+    <h3 class="w3-center">WHERE I WORK</h3>
+    <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+    <div class="w3-row w3-padding-32 w3-section">
+      <div class="w3-col m4 w3-container">
+        <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
+      </div>
+      <div class="w3-col m8 w3-panel">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
+          <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+        </div>
+        <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-right w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Forth Parallax Image with Portfolio Text -->
+  <div class="bgimg-4 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+    </div>
+  </div>
+
+
+  <!-- Container (Contact Section) -->
+  <div class="w3-content w3-container w3-padding-64" id="contact">
+    <h3 class="w3-center">WHERE I WORK</h3>
+    <p class="w3-center"><em>I'd love your feedback!</em></p>
+
+    <div class="w3-row w3-padding-32 w3-section">
+      <div class="w3-col m4 w3-container">
+        <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
+      </div>
+      <div class="w3-col m8 w3-panel">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
+          <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+        </div>
+        <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-right w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank"
+        class="w3-hover-text-green">w3.css</a></p>
+  </footer>
+
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
