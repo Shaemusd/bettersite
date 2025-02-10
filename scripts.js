@@ -87,6 +87,32 @@ button.addEventListener('mouseout', () => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //// skills
 document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll(".carousel-slide");
@@ -109,12 +135,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const dots = document.querySelectorAll(".dot");
 
     function goToSlide(index) {
-        slides[currentIndex].classList.remove("active");
+        // slides[currentIndex].classList.remove("active");
         dots[currentIndex].classList.remove("active");
 
         currentIndex = index;
 
-        slides[currentIndex].classList.add("active");
+        // slides[currentIndex].classList.add("active");
         dots[currentIndex].classList.add("active");
 
         document.querySelector(".carousel-container").style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -131,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 3000);
+        autoPlayInterval = setInterval(nextSlide, 300000);
     }
 
     function stopAutoPlay() {
@@ -151,49 +177,71 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-let player; // Will store the YouTube Player object
 
 
-// Called automatically by the YouTube IFrame API once it loads
-function onYouTubeIframeAPIReady() {
-    // Create a new Player object
+
+// We'll load the YT API with a timestamp to avoid caching
+const script = document.createElement('script');
+script.src = 'https://www.youtube.com/iframe_api?ts=' + new Date().getTime();
+document.head.appendChild(script);
+
+
+let player, player_2; // two YT Player variables
+
+// Called by the YT IFrame API
+function onYouTubeIframeAPIReady () {
+
+    console.log("Global onYouTubeIframeAPIReady called.");
+    // Player 1
     player = new YT.Player('player', {
         height: '360',
         width: '640',
-        videoId: 'nkjFc-PiWdM', // Replace with actual video ID (e.g., "dQw4w9WgXcQ")
+        videoId: 'nkjFc-PiWdM',
         playerVars: {
-            autoplay: 0,     // Don’t autoplay
-            controls: 0,     // Hide native controls
+            autoplay: 0,
+            controls: 0,
             modestbranding: 1
         },
         events: {
             onReady: onPlayerReady
         }
     });
+
+    // Player 2
+    player_2 = new YT.Player('player_2', {
+        height: '360',
+        width: '640',
+        videoId: 'nkjFc-PiWdM',
+        playerVars: {
+            autoplay: 0,
+            controls: 0,
+            modestbranding: 1
+        },
+        events: {
+            onReady: onPlayer2Ready
+        }
+    });
 }
 
-
+// Player 1 ready → set up controls
 function onPlayerReady(event) {
-    // Your custom controls are ready to go once the player is ready
     setupCustomControls();
 }
+
+// Player 2 ready → set up controls
+function onPlayer2Ready(event) {
+    setupCustomControls2();
+}
+
+// Custom controls for Player 1
 function setupCustomControls() {
     const playBtn = document.getElementById('playBtn');
     const pauseBtn = document.getElementById('pauseBtn');
     const muteBtn = document.getElementById('muteBtn');
     const volumeSlider = document.getElementById('volumeSlider');
 
-    // Play Video
-    playBtn.addEventListener('click', () => {
-        player.playVideo();
-    });
-
-    // Pause Video
-    pauseBtn.addEventListener('click', () => {
-        player.pauseVideo();
-    });
-
-    // Mute / Unmute Video
+    playBtn.addEventListener('click', () => player.playVideo());
+    pauseBtn.addEventListener('click', () => player.pauseVideo());
     muteBtn.addEventListener('click', () => {
         if (player.isMuted()) {
             player.unMute();
@@ -203,10 +251,57 @@ function setupCustomControls() {
             muteBtn.textContent = 'Unmute';
         }
     });
-
-    // Volume Slider
     volumeSlider.addEventListener('input', () => {
-        const volume = volumeSlider.value; // range is 0 to 100
-        player.setVolume(volume);
+        player.setVolume(volumeSlider.value);
     });
 }
+
+// Custom controls for Player 2
+function setupCustomControls2() {
+    const playBtn2 = document.getElementById('playBtn_2');
+    const pauseBtn2 = document.getElementById('pauseBtn_2');
+    const muteBtn2 = document.getElementById('muteBtn_2');
+    const volumeSlider2 = document.getElementById('volumeSlider_2');
+
+    playBtn2.addEventListener('click', () => player_2.playVideo());
+    pauseBtn2.addEventListener('click', () => player_2.pauseVideo());
+    muteBtn2.addEventListener('click', () => {
+        if (player_2.isMuted()) {
+            player_2.unMute();
+            muteBtn2.textContent = 'Mute';
+        } else {
+            player_2.mute();
+            muteBtn2.textContent = 'Unmute';
+        }
+    });
+    volumeSlider2.addEventListener('input', () => {
+        player_2.setVolume(volumeSlider2.value);
+    });
+}
+
+// Optional helpers to pause one player while playing the other
+function playFirstPlayer() {
+    player.playVideo();
+    player_2.pauseVideo();
+}
+function playSecondPlayer() {
+    player_2.playVideo();
+    player.pauseVideo();
+}
+
+
+function onPlayerReady(event) {
+    console.log("Player 1 ready.");
+    setupCustomControls();
+}
+
+function onPlayer2Ready(event) {
+    console.log("Player 2 ready.");
+    setupCustomControls2();
+}
+
+
+playBtn2.addEventListener('click', () => {
+    console.log("Play button 2 clicked.");
+    player_2.playVideo();
+});

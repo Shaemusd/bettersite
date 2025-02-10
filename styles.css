@@ -384,7 +384,7 @@ a {
 
 /* //////////////////////// */
 
-#player {
+#player, #player_2{
   width: 80%;   /* Desired width */
   height: 80%;  /* Desired height */
   margin: 0 auto;
@@ -426,5 +426,18 @@ button:hover {
 
 .blender_container {
   display: flex;
+  width: 80%;
   flex-direction: column;
+}
+
+.blender_content {
+  display: flex;
+  width: 20%;
+}
+
+.blender_image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
 }
