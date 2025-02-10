@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event Listeners
     nextBtn.addEventListener("click", nextSlide);
     prevBtn.addEventListener("click", prevSlide);
-    
+
     document.querySelector(".carousel").addEventListener("mouseenter", stopAutoPlay);
     document.querySelector(".carousel").addEventListener("mouseleave", startAutoPlay);
 
@@ -149,3 +149,64 @@ document.addEventListener("DOMContentLoaded", function () {
     startAutoPlay();
 });
 
+
+
+let player; // Will store the YouTube Player object
+
+
+// Called automatically by the YouTube IFrame API once it loads
+function onYouTubeIframeAPIReady() {
+    // Create a new Player object
+    player = new YT.Player('player', {
+        height: '360',
+        width: '640',
+        videoId: 'nkjFc-PiWdM', // Replace with actual video ID (e.g., "dQw4w9WgXcQ")
+        playerVars: {
+            autoplay: 0,     // Don’t autoplay
+            controls: 0,     // Hide native controls
+            modestbranding: 1
+        },
+        events: {
+            onReady: onPlayerReady
+        }
+    });
+}
+
+
+function onPlayerReady(event) {
+    // Your custom controls are ready to go once the player is ready
+    setupCustomControls();
+}
+function setupCustomControls() {
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const muteBtn = document.getElementById('muteBtn');
+    const volumeSlider = document.getElementById('volumeSlider');
+
+    // Play Video
+    playBtn.addEventListener('click', () => {
+        player.playVideo();
+    });
+
+    // Pause Video
+    pauseBtn.addEventListener('click', () => {
+        player.pauseVideo();
+    });
+
+    // Mute / Unmute Video
+    muteBtn.addEventListener('click', () => {
+        if (player.isMuted()) {
+            player.unMute();
+            muteBtn.textContent = 'Mute';
+        } else {
+            player.mute();
+            muteBtn.textContent = 'Unmute';
+        }
+    });
+
+    // Volume Slider
+    volumeSlider.addEventListener('input', () => {
+        const volume = volumeSlider.value; // range is 0 to 100
+        player.setVolume(volume);
+    });
+}

@@ -119,24 +119,6 @@
 
   </div>
 
-  <div class="w3-row w3-center w3-dark-grey w3-padding-16">
-    <div class="w3-quarter w3-section">
-      <span class="w3-xlarge">14+</span><br>
-      Partners
-    </div>
-    <div class="w3-quarter w3-section">
-      <span class="w3-xlarge">55+</span><br>
-      Projects Done
-    </div>
-    <div class="w3-quarter w3-section">
-      <span class="w3-xlarge">89+</span><br>
-      Happy Clients
-    </div>
-    <div class="w3-quarter w3-section">
-      <span class="w3-xlarge">150+</span><br>
-      Meetings
-    </div>
-  </div>
 
   <!-- Second Parallax Image with Portfolio Text -->
   <div class="bgimg-2 w3-display-container w3-opacity-min">
@@ -214,29 +196,47 @@
 
   <div class="carousel">
     <div class="carousel-container">
-        <div class="carousel-slide active">
-            <h2>Slide 1</h2>
-            <p>This is the first slide.</p>
+      <div class="carousel-slide active blender_container">
+        <h2>Slide 1</h2>
+        <!-- <p>This is the first slide.</p> -->
+        <!-- Video Container -->
+
+        <div id="player"></div>
+
+        <!-- Custom Control Buttons -->
+        <div class="controls">
+          <div class="y_buttons">
+            <button id="playBtn">Play</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="muteBtn">Mute</button>
+          </div>
+          <div>
+            <input type="range" id="volumeSlider" min="0" max="100" value="100" />
+          </div>
         </div>
-        <div class="carousel-slide">
-            <h2>Slide 2</h2>
-            <p>This is the second slide.</p>
-        </div>
-        <div class="carousel-slide">
-            <h2>Slide 3</h2>
-            <p>This is the third slide.</p>
-        </div>
+
+        <!-- Load YouTube IFrame Player API -->
+        <script src="https://www.youtube.com/iframe_api"></script>
+      </div>
+      <!-- <div class="carousel-slide">
+        <h2>Slide 2</h2>
+        <p>This is the second slide.</p>
+      </div>
+      <div class="carousel-slide">
+        <h2>Slide 3</h2>
+        <p>This is the third slide.</p>
+      </div> -->
     </div>
     <button class="prev-btn">&#10094;</button>
     <button class="next-btn">&#10095;</button>
     <div class="carousel-dots"></div>
-</div>
+  </div>
 
 
 
 
 
-  
+
 
   <!-- SKILLS ADDED-->
   <div class="w3-content w3-container w3-padding-64" id="skills">
