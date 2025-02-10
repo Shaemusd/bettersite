@@ -57,12 +57,13 @@ function myFunction() {
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
     var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
+    if (x.classList.contains("w3-show")) {
+        x.classList.remove("w3-show");
     } else {
-        x.className = x.className.replace(" w3-show", "");
+        x.classList.add("w3-show");
     }
 }
+
 
 
 // DARK MODE TOGGLE with button scale for blob effect
@@ -84,3 +85,67 @@ button.addEventListener('mouseout', () => {
     clearTimeout(timeout); // stop the scaling if the user stops hovering
     button.style.transform = 'scale(1)';
 });
+
+
+//// skills
+document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+    const dotsContainer = document.querySelector(".carousel-dots");
+
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    // Create dots dynamically
+    slides.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll(".dot");
+
+    function goToSlide(index) {
+        slides[currentIndex].classList.remove("active");
+        dots[currentIndex].classList.remove("active");
+
+        currentIndex = index;
+
+        slides[currentIndex].classList.add("active");
+        dots[currentIndex].classList.add("active");
+
+        document.querySelector(".carousel-container").style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() {
+        let newIndex = (currentIndex + 1) % slides.length;
+        goToSlide(newIndex);
+    }
+
+    function prevSlide() {
+        let newIndex = (currentIndex - 1 + slides.length) % slides.length;
+        goToSlide(newIndex);
+    }
+
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 3000);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+
+    // Event Listeners
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+    
+    document.querySelector(".carousel").addEventListener("mouseenter", stopAutoPlay);
+    document.querySelector(".carousel").addEventListener("mouseleave", startAutoPlay);
+
+    // Start autoplay
+    startAutoPlay();
+});
+
