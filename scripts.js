@@ -1,5 +1,7 @@
 const hoverBlob = document.getElementById('hoverBlob');
-const navItems = document.querySelectorAll('.w3-bar-item.w3-button');
+const navItems = document.querySelectorAll(
+    '.w3-bar-item.w3-button, #playBtn, #pauseBtn, #muteBtn, #playBtn_2, #pauseBtn_2, #muteBtn_2'
+);
 
 navItems.forEach(item => {
     item.addEventListener('mouseenter', () => {
@@ -189,14 +191,14 @@ document.head.appendChild(script);
 let player, player_2; // two YT Player variables
 
 // Called by the YT IFrame API
-function onYouTubeIframeAPIReady () {
+function onYouTubeIframeAPIReady() {
 
     console.log("Global onYouTubeIframeAPIReady called.");
     // Player 1
     player = new YT.Player('player', {
         height: '360',
         width: '640',
-        videoId: 'nkjFc-PiWdM',
+        videoId: 'nIBym2TN-qQ',
         playerVars: {
             autoplay: 0,
             controls: 0,
@@ -211,7 +213,7 @@ function onYouTubeIframeAPIReady () {
     player_2 = new YT.Player('player_2', {
         height: '360',
         width: '640',
-        videoId: 'nkjFc-PiWdM',
+        videoId: 'l80Ff_JG37k',
         playerVars: {
             autoplay: 0,
             controls: 0,
