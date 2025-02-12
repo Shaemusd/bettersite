@@ -563,10 +563,13 @@ button:hover {
   background: rgb(0, 0, 0);
   /* You can set or remove width/height here, but avoid a rigid height
      unless you specifically want a scrollable container. */
-  justify-content: center;
-  row-gap: 1em;
+  justify-content:space-evenly;
+  row-gap: 0.2em;
   padding-right: 1em;
   padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  overflow: auto;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -574,12 +577,13 @@ button:hover {
 .skills_image_holder img {
   max-width: 100%;
   /* or 200px, 50%, etc. */
-  height: auto;
   /* maintain aspect ratio */
   object-fit: contain;
   /* optional, if you fix a container dimension */
   display: block;
   /* remove inline spacing quirks */
+  
+  border-radius: 10px;
 }
 
 @media (max-width: 600px) {
@@ -605,7 +609,7 @@ button:hover {
 .lazy_flex_middle {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   height: 80%;
   background: black;
   padding: 1em;
@@ -650,9 +654,6 @@ button:hover {
   height: 2em;
 }
 
-/* .image_editing_container_bottom img{
-  /* max-width: 120px; */
-
 .spacer {
   height: 2em;
 }
@@ -663,20 +664,22 @@ button:hover {
 }
 
 .edit_bottom_container {
+  max-width: 500px;
   padding: 2em;
-  margin: auto;
   display: flex;
   overflow: auto;
   flex-direction: column;
-  max-height: 90%;
-  background: black;
+  max-height: 100%;
+  background: rgb(76, 76, 76);
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 900px) {
 
   .edit_bottom_container {
     display: flex;
-    justify-content: center;
     align-items: center;
     overflow: auto;
     width: 100%;
@@ -685,7 +688,7 @@ button:hover {
     flex-direction: row;
     padding: 0em;
     margin: 0;
-
+justify-content: space-evenly;
 
   }
 
