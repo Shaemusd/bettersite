@@ -3,6 +3,10 @@
   --text-color: #000000;
 }
 
+.scrollable-content::-webkit-scrollbar-track {
+  background: transparent;  /* make the track (background) transparent */
+}
+
 .dark-mode {
   --background-color: #121212;
   --text-color: #ffffff;
@@ -14,7 +18,7 @@ body {
 }
 
 body {
-    transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .photo_container {
@@ -26,7 +30,8 @@ body {
 /* Default: Single row for large screens */
 @media (max-width: 590px) {
   .photo_container {
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-columns: repeat(2, 1fr);
+    /* Two columns */
   }
 }
 
@@ -134,7 +139,7 @@ html {
   max-height: 200px;
   overflow: hidden;
 
-  
+
 }
 
 .button-container {
@@ -185,8 +190,21 @@ a {
 }
 
 .a_text {
-  text-align: center ;
+  text-align: center;
 }
+
+.blob-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  /* Or smaller if you don't want it to fill the entire blob */
+  height: auto;
+  pointer-events: none;
+
+}
+
 
 .hover-blob {
   opacity: 50%;
@@ -266,8 +284,15 @@ a {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 
@@ -334,11 +359,33 @@ a {
   min-width: 100%;
   height: 560px;
   box-sizing: border-box;
-  padding: 50px;
+  padding: 2em;
   text-align: center;
-  background: #333;
   color: white;
   font-size: 1.2em;
+}
+
+.blender_back {
+  background-color: rgb(174, 198, 207);
+}
+
+.video_back {
+  background-color: rgb(255, 105, 97);
+}
+
+.image_edit_back {
+  background-color: rgb(119, 221, 119);
+}
+
+.vr_back {
+  background-color: rgb(255, 182, 193);
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.vr_container {
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Navigation Buttons */
@@ -355,8 +402,13 @@ a {
   transition: 0.3s;
 }
 
-.prev-btn { left: 10px; }
-.next-btn { right: 10px; }
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
 
 .prev-btn:hover, .next-btn:hover {
   background: rgba(0, 0, 0, 0.8);
@@ -384,9 +436,11 @@ a {
 
 /* //////////////////////// */
 
-#player, #player_2{
-  width: 80%;   /* Desired width */
-  height: 80%;  /* Desired height */
+#player, #player_2 {
+  width: 80%;
+  /* Desired width */
+  height: 80%;
+  /* Desired height */
   margin: 0 auto;
   background: #000;
 }
@@ -428,11 +482,25 @@ button:hover {
   display: flex;
   width: 80%;
   flex-direction: column;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 800px) {
+  .blender_container {
+    display: flex;
+    width: 100%;
+  }
+}
+
 
 .blender_content {
   display: flex;
   width: 20%;
+  gap: 1em;
+
 }
 
 .blender_image {
@@ -440,32 +508,195 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   width: 20%;
+
 }
 
 /* Style each button: Play, Pause, Mute, etc. */
 .y_buttons button {
-  background-color: #f5f5f5;    /* light gray background */
-  color: #333;                  /* dark text */
-  border: 1px solid #ccc;       /* light border */
-  padding: 0.5rem 1rem;         /* space inside the button */
+  background-color: #f5f5f5;
+  /* light gray background */
+  color: #333;
+  /* dark text */
+  border: 1px solid #ccc;
+  /* light border */
+  padding: 0.5rem 1rem;
+  /* space inside the button */
   cursor: pointer;
-  font-size: 1rem;              /* make text reasonably sized */
-  border-radius: 4px;           /* slight rounded corners */
+  font-size: 1rem;
+  /* make text reasonably sized */
+  border-radius: 4px;
+  /* slight rounded corners */
   transition: background-color 0.2s ease, color 0.2s ease;
 }
+
 /* Hover effect for buttons */
 .y_buttons button:hover {
-  background-color: #ccc;       /* darker gray on hover */
-  color: #000;                  /* ensure good contrast */
+  background-color: #ccc;
+  /* darker gray on hover */
+  color: #000;
+  /* ensure good contrast */
 }
+
 /* Active (clicked) effect */
 .y_buttons button:active {
-  transform: scale(0.95);       /* subtle press-down effect */
+  transform: scale(0.95);
+  /* subtle press-down effect */
 }
+
 /* Volume slider styling */
 .y_buttons input[type="range"] {
-  width: 100px;                 /* adjust to your liking */
-  accent-color: #007BFF;        /* slider color in modern browsers */
-  margin-left: 0.5rem;          /* small spacing before the slider */
+  width: 100px;
+  /* adjust to your liking */
+  accent-color: #007BFF;
+  /* slider color in modern browsers */
+  margin-left: 0.5rem;
+  /* small spacing before the slider */
   cursor: pointer;
 }
+
+
+.skills_image_holder {
+  display: flex;
+  flex-direction: column;
+  max-width: 20%;
+  min-width: 140px;
+  background: rgb(0, 0, 0);
+  /* You can set or remove width/height here, but avoid a rigid height
+     unless you specifically want a scrollable container. */
+  justify-content: center;
+  row-gap: 1em;
+  padding-right: 1em;
+  padding-left: 1em;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skills_image_holder img {
+  max-width: 100%;
+  /* or 200px, 50%, etc. */
+  height: auto;
+  /* maintain aspect ratio */
+  object-fit: contain;
+  /* optional, if you fix a container dimension */
+  display: block;
+  /* remove inline spacing quirks */
+}
+
+@media (max-width: 600px) {
+  .skills_image_holder {
+    display: none;
+  }
+}
+
+
+.image_editing_container {
+  display: flex;
+  object-fit: contain;
+  gap: 0.5em;
+  justify-content: center;
+}
+.image_edit_back h2 {
+  color: #000;
+  background-color: rgb(255, 179, 71);
+  font-size: 150%;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+.lazy_flex_middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  background: black;
+  padding: 1em;
+
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+  .lazy_flex_middle {
+    display: flex;
+    flex-direction: column;
+
+  }
+}
+
+@media (max-width: 900px) {
+  .image_editing_container img {
+
+    width: 110px;
+  }
+}
+
+.image_editing_container_bottom {
+  display: flex;
+  flex-direction: column;
+  object-fit: contain;
+  gap: 0.5em;
+  justify-content: space-around;
+  
+
+}
+
+.image_editing_container img {
+  max-width: 220px;
+
+  border-radius: 10px;
+
+}
+
+.spacer {
+  height: 2em;
+}
+
+/* .image_editing_container_bottom img{
+  /* max-width: 120px; */
+
+.spacer {
+  height: 2em;
+}
+
+.edit_bottom_container img {
+  padding: 0.3em;
+  min-width: 100px;
+}
+
+.edit_bottom_container {
+  padding: 2em;
+  margin: auto;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  max-height: 90%;
+  background: black;
+}
+
+@media (max-width: 900px) {
+
+  .edit_bottom_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    scrollbar-width: auto;
+    flex-direction: row;
+    padding: 0em;
+    margin: 0;
+
+
+  }
+
+  .image_editing_container_bottom img {
+    max-width: 120px;
+  }
+}
+
+/* 
+.lazy_flex_middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */

@@ -14,8 +14,16 @@
 
 <body>
 
+
+
+
+
+
   <!-- Blob element -->
-  <div class="hover-blob" id="hoverBlob"></div>
+  <div class="hover-blob" id="hoverBlob">
+
+    <img src="media/image_skill/cute_face.png" alt="GIF Overlay" class="blob-img" />
+  </div>
 
   <div class="w3-top">
     <div class="w3-bar" id="myNavbar">
@@ -51,7 +59,7 @@
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
     <a href="#" class="w3-bar-item w3-button">SEARCH</a>
   </div>
-  
+
 
   <!-- First Parallax Image with Logo Text -->
   <div class="" id="home">
@@ -197,13 +205,13 @@
   <h2 id="skills"></h2>
   <div class="carousel">
     <div class="carousel-container">
-      <div class="carousel-slide active blender_content">
-        <div class="blender_container">
+      <div class="carousel-slide active video_back blender_content video_editing">
+        <div class="blender_container w3-black">
           <h2>Video Editing</h2>
           <div id="player_2"></div>
           <div class="controls">
             <div class="y_buttons">
-              <button id="playBtn_2">Play</button>
+              <button id="playBtn_2">Playy</button>
               <button id="pauseBtn_2">Pause</button>
               <button id="muteBtn_2">Mute</button>
             </div>
@@ -213,20 +221,18 @@
           </div>
 
         </div>
-        <div class="blender_image">
-          <button>HI HEY</button>
-          <button>HI HEY</button>
-
-          <button>HI HEY</button>
-
-
-
+        <div class="skills_image_holder w3-black">
+          <img src="media/image_skill/news_thumbnail.png" onclick="onClick(this)" class="w3-hover-opacity"
+            alt="Empty ghost train">
+          <img src="media/image_skill/news_edit.png" onclick="onClick(this)" class="w3-hover-opacity"
+            alt="Empty ghost train">
+          <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
         </div>
       </div>
-      <div class="carousel-slide blender_content">
-
+      <div class="carousel-slide blender_back blender_content w3">
+        
         <div class="blender_container">
-          <h2>Slide 2</h2>
+          <h2>3D Modeling</h2>
           <!-- <p>This is the first slide.</p> -->
           <!-- Video Container -->
 
@@ -244,35 +250,75 @@
             </div>
           </div>
         </div>
-        <div class="blender_image">
-          <img src="media/image/bru.jpeg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-            alt="Empty ghost train">
-          <button>HI HEY</button>
-          <button>HI HEY</button>
+        <div class="skills_image_holder">
+          <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+          <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
+          <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity" alt="Empty ghost train">
         </div>
       </div>
-      <div class="carousel-slide">
-        <h2>Image Editing</h2>
-        <div class="_container">
-          <div class="">
-            <div class="">
+      <div class="carousel-slide image_edit_back">
+        
+        <h2><b>Image Creation + Repair + Editing</b></h2>
+        <div class="lazy_flex_middle">
+          <div class="image_editing_container">
+            <img src="media/image_skill/woman_start.png" onclick="onClick(this)" class="w3-hover-opacity"
+              alt="Empty ghost train">
+
+            <img src="media/image_skill/woman_end.png" onclick="onClick(this)" class="w3-hover-opacity"
+              alt="Empty ghost train">
+          </div>
+          <div class="spacer"></div>
+          <div class="edit_bottom_container scrollable-content">
+            <div class="image_editing_container_bottom">
+              <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Empty ghost train">
+              <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Empty ghost train">
+            </div>
+            <div class="image_editing_container_bottom">
+              <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Empty ghost train">
+              <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Empty ghost train">
+            </div>
+            <div class="image_editing_container_bottom">
+              <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Empty ghost train">
+              <img src="media/image/balance.jpg" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Empty ghost train">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-slide active vr_back">
+        <div class="vr_container">
+          <h2>Virtual/Augmented Reality</h2>
+          <p>Coming Soon</p>
+          <div id="player_3"></div>
+          <div class="controls">
+            <div class="y_buttons">
+              <button id="playBtn_3">Playy</button>
+              <button id="pauseBtn_3">Pause</button>
+              <button id="muteBtn_3">Mute</button>
+            </div>
+            <div>
+              <input type="range" id="volumeSlider_3" min="0" max="100" value="100" />
+            </div>
+          </div>
+          <div id="player_4"></div>
+          <div class="controls">
+            <div class="y_buttons">
+              <button id="playBtn_4">Playy</button>
+              <button id="pauseBtn_4">Pause</button>
+              <button id="muteBtn_4">Mute</button>
+            </div>
+            <div>
+              <input type="range" id="volumeSlider_4" min="0" max="100" value="100" />
             </div>
           </div>
         </div>
-        <div class="blender_image">
-          <img src="media/image/bro_bru.jpeg">
-
-          <button>HI HEY</button>
-
-          <button>HI HEY</button>
-
-
-
-        </div>
-      </div>
-
-      <div class="carousel-slide">
-        <h2>Slide 3</h2>
       </div>
     </div>
     <button class="prev-btn">&#10094;</button>
