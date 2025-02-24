@@ -201,6 +201,7 @@ a {
 
 .h3_holder {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -499,6 +500,18 @@ button:hover {
   margin-left: 10px;
   cursor: pointer;
 }
+
+.fish_container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+padding: 1em;
+  /* background-color: rgb(255, 105, 97); 
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); */
+}
+
 
 .video_container {
   display: flex;
