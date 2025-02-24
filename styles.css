@@ -194,6 +194,13 @@ a {
   text-align: center;
 }
 
+.h3_holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .blob-img {
   position: absolute;
   top: 50%;
@@ -208,6 +215,8 @@ a {
 
 
 .hover-blob {
+  left: -9999px;
+  top: -9999px;
   opacity: 50%;
   position: fixed;
   /* Keep the blob within the viewport */
@@ -368,32 +377,32 @@ a {
 
 .blender_back {
   /* background-color: rgb(174, 198, 207); */
-  background-color: black;
+  background-color: rgb(95, 95, 95);
 }
 
 .video_back {
   /* background-color: rgb(255, 105, 97); */
-  background-color: black;
+  background-color: rgb(95, 95, 95);
 }
 
 .image_edit_back {
   /* background-color: rgb(119, 221, 119); */
-  background-color: black;
+  background-color: rgb(95, 95, 95);
 }
 
 .vr_back {
   /* background-color: rgb(255, 182, 193); */
-  background-color: black;
+  background-color: rgb(95, 95, 95);
   border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 15px rgba(2, 2, 2, 0.2);
 }
 
 .vr_container {
   color: #000;
-  background-color: #545353;
+  background-color: #333333;
   /* background-color: rgb(255, 182, 193); */
   border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 15px rgba(2, 2, 2, 0.2);
 }
 
 /* Navigation Buttons */
@@ -492,7 +501,7 @@ button:hover {
   flex-direction: column;
   align-items: center;
 
-  background-color: #545353;
+  background-color: #333333;
   /* background-color: rgb(255, 105, 97);  */
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -506,7 +515,7 @@ button:hover {
   align-items: center;
   /* background-color: rgb(174, 198, 207);  */
 
-  background-color: #545353;
+  background-color: #333333;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -583,7 +592,7 @@ button:hover {
   flex-direction: column;
   max-width: 20%;
   min-width: 140px;
-  background: rgb(0, 0, 0);
+  background-color: #333333;
   /* You can set or remove width/height here, but avoid a rigid height
      unless you specifically want a scrollable container. */
   justify-content: space-evenly;
@@ -641,7 +650,7 @@ button:hover {
   height: 80%;
   /* background-color: rgb(119, 221, 119); */
   
-  background-color: #545353;
+  background-color: #333333;
   padding: 1em;
 
   border-radius: 10px;
@@ -702,7 +711,7 @@ button:hover {
   overflow: auto;
   flex-direction: column;
   max-height: 100%;
-  background: #000;
+  background-color: #333333;
   padding: 1em;
   border-radius: 10px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
