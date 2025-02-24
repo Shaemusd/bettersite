@@ -66,6 +66,11 @@ html {
   background-size: cover;
 }
 
+.me_info {
+  display: flex;
+  align-items: center;
+}
+
 .max-h {
 
   max-width: 100%;
@@ -96,7 +101,7 @@ html {
 
 /* First image (Logo. Full height) */
 .bgimg-4 {
-  background-image: url('media/image/balance.jpg');
+  background-image: url('media/image/redroom.jpg');
   min-height: 400px;
 }
 
@@ -108,7 +113,7 @@ html {
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url("media/image/redroom.jpg");
+  background-image: url("media/image/balance.jpg");
   min-height: 400px;
 }
 
@@ -131,7 +136,7 @@ html {
   .bgimg-2,
   .bgimg-3,
   .bgimg-4 {
-    background-attachment: scroll;
+    /* background-attachment: scroll; */
     min-height: 400px;
   }
 }
@@ -497,7 +502,7 @@ button:hover {
 
 .video_container {
   display: flex;
-  width: 80%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 
